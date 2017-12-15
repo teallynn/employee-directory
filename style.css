@@ -1,0 +1,68 @@
+/*--Base Styling-------------------------*/
+* {
+  box-sizing: border-box;
+  font-family: 'Nunito', sans-serif;
+}
+
+body {
+  margin: 0;
+  padding: 0;
+  align-content: center;
+  background-color: #f9f9f9;
+}
+
+h2 {
+  margin: 45px;
+  text-align: center;
+}
+
+/*--Directory Grid Styling-------------------*/
+.directory {
+  max-width: 1300px;
+  margin: 25px auto;
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(400px, 1fr));
+  grid-column-gap: 25px;
+  grid-row-gap: 25px
+}
+
+.employee-directory ul { list-style: none; }
+
+
+/*--Individuals Grid Item Styling-------------*/
+.employee-directory ul li {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: center;
+  border: solid 2.25px #dddddd;
+  border-radius: 10px;
+  text-align: center;
+  background-color: #fff;
+}
+
+.employee-directory ul li p strong {
+  font-size: 20px;
+}
+
+/*--Thumbnail Image Styling--------------------*/
+.employee-directory ul li a {
+  display: block;
+  align-self: flex-start;
+  padding: 15px;
+  padding-right: 20px
+  margin-right: 10px auto;
+  margin-bottom: 7px;
+  opacity: 0.75;
+  -webkit-transition: all 0.3s linear;
+  -moz-transition: all 0.3s linear;
+  transition: all 0.3s linear;
+}
+
+.employee-directory ul li a:hover {
+  opacity: 1.0;
+}
+
+.employee-directory ul li a img {
+  border-radius: 50%;
+}
