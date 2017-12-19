@@ -84,6 +84,10 @@ strong {
   margin-bottom: 7px;
 }
 
+.employee-directory ul li p {
+  text-align: left;
+}
+
 .employee-directory ul li:hover {
   opacity: 1.0;
   border: solid 2.5px #b2b2b2;

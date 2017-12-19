@@ -61,8 +61,8 @@ function displayEmployeeModal(index) {
   modalContent += '<span class="close">&times;</span>';
   modalContent += '<img src="' + employee.picture.large + '">';
   modalContent += '<p><strong>' + firstName + ' ' + lastName + '</strong><br>';
-  modalContent += employee.email + '<br>' + city + '<hr>';
-  modalContent += employee.cell + '<br>';
+  modalContent += employee.login.username + '<br>' + employee.email + '<br>';
+  modalContent += city + '<hr>' + employee.cell + '<br>';
   modalContent += employee.location.street + ', ' + employee.location.state;
   modalContent += ' ' + employee.location.postcode + '<br>';
   modalContent += 'Birthday: ' + dob + '</p>';
