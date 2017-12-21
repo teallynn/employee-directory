@@ -55,16 +55,15 @@ function displayEmployeeModal(index) {
   let employee = employees[index];
   let firstName = capitalize(employee.name.first);
   let lastName = capitalize(employee.name.last);
-  let city = capitalize(employee.location.city);
+  let address = formatAddress(employee);
   let dob = formatDateOfBirth(employee.dob);
   let modalContent = '<div class="modal-content">';
   modalContent += '<span class="close">&times;</span>';
   modalContent += '<img src="' + employee.picture.large + '">';
   modalContent += '<p><strong>' + firstName + ' ' + lastName + '</strong><br>';
-  modalContent += employee.login.username + '<br>' + employee.email + '<br>';
-  modalContent += city + '<hr>' + employee.cell + '<br>';
-  modalContent += employee.location.street + ', ' + employee.location.state;
-  modalContent += ' ' + employee.location.postcode + '<br>';
+  modalContent += '<br>' + employee.login.username + '<br>' + employee.email + '<br>';
+  modalContent += '<br><hr><br>' + employee.cell + '<br><br>';
+  modalContent += address + '<br>';
   modalContent += 'Birthday: ' + dob + '</p>';
   modalContent += '<span class="buttons">';
   modalContent += '<button class="back">Back</button>'
@@ -83,11 +82,27 @@ function displayEmployeeModal(index) {
  */
 function formatDateOfBirth(string) {
   let date = new Date(Date.parse(string));
-  let month = date.getMonth();
+  let month = date.getMonth() + 1;
   let day = date.getDate();
   let year = date.getYear();
   let dob = month + '/' + day + '/' + year;
   return dob;
+}
+
+/*******************************************************************************
+ * Takes the date of birth string from an eployees array object, parses it into
+ * a date object to extract only the necessary information and then puts it back
+ * into a string to be formatted. Returns formatted date string (mm/dd/yy)
+ *******************************************************************************
+ */
+function formatAddress(employee) {
+  let city = capitalize(employee.location.city);
+  let state = capitalize(employee.location.state);
+  let address = employee.location.street + '<br>'
+  address += city + ', ' + state;
+  address += ' ' + employee.location.postcode + ', ';
+  address += employee.nat + '<br>';
+  return address;
 }
 
 /*******************************************************************************
